@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<textarea id="outputwind" onkeyup="myFunction(event)"></textarea>
+  <p id="inputwind">dude we dont see how is that a party?</p>
+  <h4 id="totaltime"></h4>
+  <h4 id="totalchar"></h4>
+  <h4 id="res"></h4>
+
+</body>
+  <script>
+  var i=0;
+  function myFunction(event)
+    {
+      var ev=event.which;
+      if(ev!=20&&ev!=8)
+      {   var str="dude we dont see how is that a party?";
+        if(i==0)
+        {
+          var d=new Date();
+          var init=d.getTime();
+        }
+        if(i==str.length)
+        {
+          var d2=new Date();
+          var fintime=d2.getTime();
+          var wp=(fintime-init)/1000;
+          var wpmspeed=36/wp;
+          document.getElementById("totaltime").innerHTML="the total time taken was "+wp;
+          document.getElementById("totalchar").innerHTML="the total number of characters typed were "+36;
+          document.getElementById("res").innerHTML="THE WPM SPEED IS "+wpmspeed;
+        }
+        }
+    var x=document.getElementById("outputwind").value;
+    var y=document.getElementById("inputwind");
+    var z=str.substring(0,i+1);
+    var w=str.charAt(i);
+    if(x == z)
+    {var j=i;
+      ++i;
+      var len=str.length;
+      var fstr=str.substring(0,j+1).fontcolor("green");//change font to green
+      var bstr=str.substring(j+1,len);
+      var finstr=fstr+bstr;
+      document.getElementById("inputwind").innerHTML=finstr;
+    }else {
+      //change font to red
+      var len=str.length;
+        var j2=i;
+        var grf=str.substring(0,j2).fontcolor("green");
+
+        var rw=w.fontcolor("red");
+        var backstr=str.substring(j2+1,len);
+        var rstr=grf+rw+backstr;
+        document.getElementById("inputwind").innerHTML=rstr;
+        window.alert("you have typed a wrong character");
+      //display an alert
+      //pause the cursor
+}
+}
+}
+
+</script>
+</html>
