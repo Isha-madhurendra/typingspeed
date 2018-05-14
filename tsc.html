@@ -10,27 +10,29 @@
 </body>
   <script>
   var i=0;
+   var flag=0;
+   var d;
+    
   function myFunction(event)
-    {
+    {if(!flag)
+    { d=new Date();
+    flag++;
+    }
       var ev=event.which;
       if(ev!=20&&ev!=8)
       {   var str="dude we dont see how is that a party?";
-        if(i==0)
-        {
-          var d=new Date();
-          var init=d.getTime();
-        }
+       
         if(i==str.length)
         {
           var d2=new Date();
-          var fintime=d2.getTime();
-          var wp=(fintime-init)/1000;
+          
+          var wp=(d2-d)/1000;
           var wpmspeed=36/wp;
           document.getElementById("totaltime").innerHTML="the total time taken was "+wp;
           document.getElementById("totalchar").innerHTML="the total number of characters typed were "+36;
           document.getElementById("res").innerHTML="THE WPM SPEED IS "+wpmspeed;
         }
-        }
+        
     var x=document.getElementById("outputwind").value;
     var y=document.getElementById("inputwind");
     var z=str.substring(0,i+1);
