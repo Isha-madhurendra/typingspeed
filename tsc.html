@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <div class="elements">
+    <h1>TYPING SPEED COUNTER</h1>
+    <h3>Start typing here!</h3>
 <textarea id="outputwind" onkeyup="myFunction(event)"></textarea>
-  <p id="inputwind">dude we dont see how is that a party?</p>
-  <h4 id="totaltime"></h4>
-  <h4 id="totalchar"></h4>
-  <h4 id="res"></h4>
-
+  <p id="inputwind">dude we do not see how is that a party?</p>
+  <p id="totaltime"></p>
+  <p id="totalchar"></p>
+  <p id="res"></p>
+</div>
 </body>
+<style>
+body{
+  background-image: url('ironman.jpg');
+  min-height: 100%;
+  position:absolute;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+h1{
+  color: #ff6666;
+}
+h3{color: #ff6666;
+
+}
+ p{color:white;
+   font-size: 25px;
+   font-family: "Lato",sans-serif;
+ }
+ textarea{
+   width:500px;
+   height:50px;
+ }
+ div{ position:fixed;
+    top: 20%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em;
+    margin-left: -15em;
+    letter-spacing: 4px;
+ }
+
+</style>
   <script>
   var i=0;
    var flag=0;
    var d;
-    
+
   function myFunction(event)
     {if(!flag)
     { d=new Date();
@@ -20,19 +57,19 @@
     }
       var ev=event.which;
       if(ev!=20&&ev!=8)
-      {   var str="dude we dont see how is that a party?";
-       
+      {   var str="dude we do not see how is that a party?";
+
         if(i==str.length)
         {
           var d2=new Date();
-          
+
           var wp=(d2-d)/1000;
-          var wpmspeed=36/wp;
+          var wpmspeed=39/wp;
           document.getElementById("totaltime").innerHTML="the total time taken was "+wp;
-          document.getElementById("totalchar").innerHTML="the total number of characters typed were "+36;
+          document.getElementById("totalchar").innerHTML="the total number of characters typed were "+39;
           document.getElementById("res").innerHTML="THE WPM SPEED IS "+wpmspeed;
         }
-        
+
     var x=document.getElementById("outputwind").value;
     var y=document.getElementById("inputwind");
     var z=str.substring(0,i+1);
