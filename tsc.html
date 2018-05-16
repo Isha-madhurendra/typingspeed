@@ -5,6 +5,7 @@
     <h1>TYPING SPEED COUNTER</h1>
     <h3>Start typing here!</h3>
 <textarea id="outputwind" onkeyup="myFunction(event)"></textarea>
+    <input type="button" value="Clear" onclick="javascript:eraseText();">
   <p id="inputwind">dude we do not see how is that a party?</p>
   <p id="totaltime"></p>
   <p id="totalchar"></p>
@@ -52,7 +53,11 @@ font-family:"Lato",sans-serif;
   var i=0;
    var flag=0;
    var d;
+function eraseText()
+{i=0;
+  document.getElementById("outputwind").value="";
 
+}
   function myFunction(event)
     {if(!flag)
     { d=new Date();
