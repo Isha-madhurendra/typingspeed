@@ -73,19 +73,10 @@ i=0;
     flag++;
     }
       var ev=event.which;
-      if(ev!=20&&ev!=8)
+      if(ev!=20)
       {   var str="dude we do not see how is that a party?";
 
-        if(i==str.length)
-        {
-          var d2=new Date();
-
-          var wp=(d2-d)/1000;
-          var wpmspeed=39/wp;
-          document.getElementById("totaltime").innerHTML="the total time taken was "+wp;
-          document.getElementById("totalchar").innerHTML="the total number of characters typed were "+39;
-          document.getElementById("res").innerHTML="THE WPM SPEED IS "+wpmspeed;
-        }
+       
 
     var x=document.getElementById("outputwind").value;
     var y=document.getElementById("inputwind");
@@ -109,10 +100,21 @@ i=0;
         var backstr=str.substring(j2+1,len);
         var rstr=grf+rw+backstr;
         document.getElementById("inputwind").innerHTML=rstr;
+      i--;
         window.alert("you have typed a wrong character");
       //display an alert
       //pause the cursor
 }
+        if(i==str.length)
+        {
+          var d2=new Date();
+
+          var wp=(d2-d)/1000;
+          var wpmspeed=39/wp;
+          document.getElementById("totaltime").innerHTML="the total time taken was "+wp;
+          document.getElementById("totalchar").innerHTML="the total number of characters typed were "+39;
+          document.getElementById("res").innerHTML="THE WPM SPEED IS "+wpmspeed;
+        }
 }
 }
 
