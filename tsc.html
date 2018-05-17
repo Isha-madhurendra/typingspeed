@@ -4,7 +4,7 @@
   <div class="elements">
     <h1>TYPING SPEED COUNTER</h1>
     <h3>Start typing here!</h3>
-<textarea id="outputwind" onkeyup="myFunction(event)"></textarea>
+<input type="text"id="outputwind" oninput="myFunction(event)">
     <input type="button" value="Clear" onclick="javascript:eraseText();">
   <p id="inputwind">dude we do not see how is that a party?</p>
   <p id="totaltime"></p>
@@ -76,7 +76,7 @@ i=0;
       if(ev!=20&&ev!=8)
       {   var str="dude we do not see how is that a party?";
 
-        if(i==str.length)
+        if(i==str.length-1)
         {
           var d2=new Date();
 
